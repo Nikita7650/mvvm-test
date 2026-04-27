@@ -1,0 +1,134 @@
+﻿<Window x:Class="mvvm_test.View.ViewTovar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mvvm_test.View"
+        xmlns:mvvm="clr-namespace:mvvm_test.ViewModel"
+        mc:Ignorable="d"
+        Title="ViewTovar" Height="450" Width="800">
+
+    <Window.DataContext>
+        <mvvm:vmTovar/>
+    </Window.DataContext>
+    
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.Row="0" Source="/View/icon.png" />
+
+        <TextBlock  Grid.Row="0" Text="Окно товаров"  Style="{StaticResource PrimaryTextBlock}" Grid.Column="1" Margin="195,10,175,0" Grid.ColumnSpan="2"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <TextBlock Text="Поиск:"/>
+            <TextBox Text="123" Style="{StaticResource ResourceKey=PrimaryTextBox}" Height="21"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="2">
+            <TextBlock Text="Фильтрация:"/>
+            <ComboBox Style="{StaticResource CmBox}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="3">
+            <TextBlock Text="Сортировка"/>
+            <ComboBox Style="{StaticResource CmBox}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="2">
+            <Button Content="Добавить"  Style="{StaticResource AccentButtomStyle}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="3">
+            <Button Content="Удалить" Style="{StaticResource AccentButtomStyle}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="1">
+            <Button Content="Редактировать" Style="{StaticResource AccentButtomStyle}"/>
+        </StackPanel>
+
+        <ListBox HorizontalContentAlignment="Stretch"
+                 VerticalAlignment="Center"
+                 ItemsSource="{Binding ListТовары}"
+                 Grid.Row="2"
+                 Grid.ColumnSpan="4" SelectionChanged="ListBox_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border
+                        BorderBrush="Black"
+                        BorderThickness="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Grid.Column="0"
+                                   MaxHeight="200"
+                                   MaxWidth="300"
+                                   Source="{Binding Photo}"
+                                   Stretch="Fill" />
+
+                            <StackPanel Grid.Column="1"
+                                        Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Катогория.Категория_товара}"/>
+                                    <TextBlock Text=" | "/>
+                                    <TextBlock Text="{Binding Наименование_товара}"/>
+                                </StackPanel>
+
+                                <TextBlock Text="{Binding Описание_товара,
+                                    StringFormat={} Описание товара: {0}}"
+                                           TextWrapping="Wrap"/>
+
+                                <TextBlock Text="{Binding Производитель.Производитель1,
+                                    StringFormat={} Производитель: {0}}"
+                                           TextWrapping="Wrap"/>
+                                
+                                <TextBlock Text="{Binding Поставщик.Поставщик1,
+                                    StringFormat={} Поставщик: {0}}"
+                                           TextWrapping="Wrap"/>
+                                
+                                <TextBlock Text="{Binding Цена,
+                                    StringFormat={} Цена: {0}}"
+                                           TextWrapping="Wrap"/>
+                                
+                                <TextBlock Text="{Binding Единица_измерения,
+                                    StringFormat={} Еденица измерения: {0}}"
+                                           TextWrapping="Wrap"/>
+                                
+                                <TextBlock Text="{Binding Кол_во_на_складе,
+                                    StringFormat={} Количество на складе: {0}}"
+                                           TextWrapping="Wrap"/>
+                                
+                            </StackPanel>
+
+                            <TextBlock Grid.Column="2"
+                                       Text="{Binding Действующая_скидка}"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+            
+        
+
+        
+
+    </Grid>
+</Window>

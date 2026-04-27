@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9be932700e7a48b5a2dc85342cff44bf" Name="Diagram1">
+        <EntityTypeShape EntityType="КалиевПрактикаModel.sysdiagrams" Width="1.5" PointX="3.5" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="КалиевПрактикаModel.Заказ" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="КалиевПрактикаModel.Катогория" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="КалиевПрактикаModel.Пользователи" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="КалиевПрактикаModel.Поставщик" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="КалиевПрактикаModel.Производитель" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="КалиевПрактикаModel.ПунктВыдачи" Width="1.5" PointX="0.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="КалиевПрактикаModel.Роли" Width="1.5" PointX="1.5" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="КалиевПрактикаModel.СтатусЗаказа" Width="1.5" PointX="0.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="КалиевПрактикаModel.Товары" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="КалиевПрактикаModel.СоставЗаказа" Width="1.5" PointX="6.25" PointY="3.375" IsExpanded="true" />
+        <AssociationConnector Association="КалиевПрактикаModel.FK_Заказ_Пользователи" ManuallyRouted="false" />
+        <AssociationConnector Association="КалиевПрактикаModel.FK_Заказ_ПунктВыдачи" ManuallyRouted="false" />
+        <AssociationConnector Association="КалиевПрактикаModel.FK_Заказ_СтатусЗаказа" ManuallyRouted="false" />
+        <AssociationConnector Association="КалиевПрактикаModel.FK_СоставЗаказа_Заказ" ManuallyRouted="false" />
+        <AssociationConnector Association="КалиевПрактикаModel.FK_Товары_Катогория" ManuallyRouted="false" />
+        <AssociationConnector Association="КалиевПрактикаModel.FK_Пользователи_Роли" ManuallyRouted="false" />
+        <AssociationConnector Association="КалиевПрактикаModel.FK_Товары_Поставщик" ManuallyRouted="false" />
+        <AssociationConnector Association="КалиевПрактикаModel.FK_Товары_Производитель" ManuallyRouted="false" />
+        <AssociationConnector Association="КалиевПрактикаModel.FK_СоставЗаказа_Товары" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
