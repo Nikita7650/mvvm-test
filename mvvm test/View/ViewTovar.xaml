@@ -29,7 +29,7 @@
 
         <Image Grid.Row="0" Source="/View/icon.png" />
 
-        <TextBlock  Grid.Row="0" Text="Окно товаров"  Style="{StaticResource PrimaryTextBlock}" Grid.Column="1" Margin="195,10,175,0" Grid.ColumnSpan="2"/>
+        <TextBlock  Grid.Row="0" Text="Окно товаров"  Style="{StaticResource PrimaryTextBlock}" Grid.Column="2"/>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
             <TextBlock Text="Поиск:"/>
