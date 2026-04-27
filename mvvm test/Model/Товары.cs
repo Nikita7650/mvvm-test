@@ -11,7 +11,8 @@ namespace mvvm_test.Model
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Windows;
+
     public partial class Товары
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -37,10 +38,63 @@ namespace mvvm_test.Model
             get
             {
                 if (Фото == null)
-                    return @"\Photo\picture/png";
+                    return @"\Photo\picture.png";
                 else return "\\Photo\\" + Фото;
             }
         }
+
+
+        public string color
+        {
+            get
+            {
+                if (Действующая_скидка > 15)
+                    return "#483D8B";
+                else return null;
+            }
+        }
+
+        public string Decorations
+        {
+            get
+            {
+                if (Действующая_скидка >= 1)
+                    return "Strikethrough";
+                else return null;
+            }
+        }
+
+        public string PriceColorNew
+        {
+            get
+            {
+                if (Действующая_скидка >= 1)
+                    return "red";
+                else return null;
+            }
+        }
+
+        public string PriceColorOld
+        {
+            get
+            {
+                if (Действующая_скидка >= 1)
+                    return "black";
+                else return null;
+            }
+        }
+
+        public Nullable<decimal> NewPrice
+        {
+            get
+            {
+                
+                if (Действующая_скидка > 1)
+                    return Цена - (Цена * ((decimal)Действующая_скидка / 100));
+                else return null;
+            }
+        }
+
     
         public virtual Катогория Катогория { get; set; }
         public virtual Поставщик Поставщик { get; set; }

@@ -1,4 +1,5 @@
 ﻿using mvvm_test.Model;
+using mvvm_test.View;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,6 +20,9 @@ namespace mvvm_test.ViewModel
             _listТовары ?? (_listТовары
             = new ObservableCollection<Товары>());
 
+        
+
+
         public vmTovar()
         {
             ListТовары.Clear();
@@ -27,6 +31,9 @@ namespace mvvm_test.ViewModel
             {
                 ListТовары.Add(item);
             }
+
+            
+
         }
     }
 }

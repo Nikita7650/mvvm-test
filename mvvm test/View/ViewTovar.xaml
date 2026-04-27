@@ -68,7 +68,9 @@
                     <Border
                         BorderBrush="Black"
                         BorderThickness="2">
-                        <Grid>
+                        
+
+                        <Grid Background="{Binding color}">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="2*"/>
                                 <ColumnDefinition Width="4*"/>
@@ -100,11 +102,14 @@
                                 <TextBlock Text="{Binding Поставщик.Поставщик1,
                                     StringFormat={} Поставщик: {0}}"
                                            TextWrapping="Wrap"/>
-                                
+
                                 <TextBlock Text="{Binding Цена,
                                     StringFormat={} Цена: {0}}"
-                                           TextWrapping="Wrap"/>
-                                
+                                           TextWrapping="Wrap"
+                                           TextDecorations="{Binding Decorations}"/>
+                                <TextBlock Text="{Binding NewPrice}"
+                                           Foreground="{Binding PriceColorNew}"/>
+
                                 <TextBlock Text="{Binding Единица_измерения,
                                     StringFormat={} Еденица измерения: {0}}"
                                            TextWrapping="Wrap"/>

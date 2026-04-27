@@ -63,7 +63,7 @@ namespace mvvm_test.ViewModel
 
             }
 
-            MessageBox.Show("Сообщение");
+            MessageBox.Show("Успешный успех");
         }
 
     }
