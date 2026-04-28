@@ -33,7 +33,7 @@
 
         <StackPanel Grid.Row="1" Grid.Column="1">
             <TextBlock Text="Поиск:"/>
-            <TextBox Text="123" Style="{StaticResource ResourceKey=PrimaryTextBox}" Height="21"/>
+            <TextBox Text="123" />
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="2">
@@ -56,6 +56,10 @@
 
         <StackPanel Grid.Row="3" Grid.Column="1">
             <Button Content="Редактировать" Style="{StaticResource AccentButtomStyle}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <Button Content="Выйти" Style="{StaticResource SecondaryButtonStyle}" Click="Button_Click"/>
         </StackPanel>
 
         <ListBox HorizontalContentAlignment="Stretch"

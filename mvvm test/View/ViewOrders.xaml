@@ -1,0 +1,54 @@
+﻿<Window x:Class="mvvm_test.View.ViewOrders"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mvvm_test.View"
+        mc:Ignorable="d"
+        Title="ViewOrders" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.Row="0" Source="/View/icon.png" />
+
+        <TextBlock  Grid.Row="0" Text="Окно заказов"  Style="{StaticResource PrimaryTextBlock}" Grid.Column="2"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <TextBlock Text="Поиск:"/>
+            <TextBox Text="123"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="2">
+            <TextBlock Text="Фильтрация:"/>
+            <ComboBox Style="{StaticResource CmBox}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="3">
+            <TextBlock Text="Сортировка"/>
+            <ComboBox Style="{StaticResource CmBox}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="2">
+            <Button Content="Добавить"  Style="{StaticResource AccentButtomStyle}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="3">
+            <Button Content="Удалить" Style="{StaticResource AccentButtomStyle}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="1">
+            <Button Content="Редактировать" Style="{StaticResource AccentButtomStyle}"/>
+        </StackPanel>
+    </Grid>
+</Window>

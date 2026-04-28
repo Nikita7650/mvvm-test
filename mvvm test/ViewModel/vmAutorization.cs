@@ -43,6 +43,7 @@ namespace mvvm_test.ViewModel
 
         public ICommand LoginCommand => _command ?? (_command = new CommandAction(Login));
 
+
         void Login()
         {
             var users = db.Пользователи.ToList();
@@ -63,8 +64,20 @@ namespace mvvm_test.ViewModel
 
             }
 
-            MessageBox.Show("Успешный успех");
         }
+
+        private ICommand GostCommand;
+        public ICommand GostLogin => GostCommand ?? (GostCommand = new CommandAction(LoginGost));
+        void LoginGost()
+        {
+            Autorization autorization = new Autorization();
+            autorization.Close();
+            
+
+            ViewTovar viewTovar = new ViewTovar();
+            viewTovar.Show();
+        }
+
 
     }
 

@@ -24,7 +24,7 @@
         </Grid.RowDefinitions>
 
         <DockPanel Grid.Row="0">
-            <TextBlock Style="{StaticResource AccentTextBlock}"
+            <TextBlock Style="{StaticResource SecondaryTextBlock}"
                        Text="Авторизация"/>
         </DockPanel>
 
@@ -36,7 +36,8 @@
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Логин:"
                            Foreground="Black"
-                           Style="{StaticResource AccentTextBlock}"/>
+                           Style="{StaticResource SecondaryTextBlock}"
+                           />
                 <TextBox Text="{Binding Логин}" Width="200"/>
 
             </StackPanel>
@@ -44,24 +45,27 @@
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Пароль:"
                            
-                           Style="{StaticResource AccentTextBlock}"/>
+                           Style="{StaticResource SecondaryTextBlock}"/>
                 <TextBox Text= "{Binding Пароль}" Width="200"/>
             </StackPanel>
 
         </StackPanel>
 
-        <Button 
-                Command="{Binding LoginCommand}"
-                Grid.Row="2"
-                Content="Войти"
-                Style="{StaticResource AccentButtomStyle}"/>
+        
 
 
 
             <StatusBar Grid.Row="3">
                 <Button Content="Войти как гость"
-                        Style="{StaticResource AccentButtomStyle}"/>
-            </StatusBar>
+                        Style="{StaticResource AccentButtomStyle}"
+                        Command="{Binding GostLogin}"/>
+            <Button 
+        Command="{Binding LoginCommand}"
+        Grid.Row="2"
+        Content="Войти"
+        Style="{StaticResource AccentButtomStyle}"
+                />
+        </StatusBar>
         
     </Grid>
 </Window>

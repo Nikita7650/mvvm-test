@@ -15,27 +15,13 @@ using System.Windows.Shapes;
 namespace mvvm_test.View
 {
     /// <summary>
-    /// Логика взаимодействия для ViewTovar.xaml
+    /// Логика взаимодействия для AddOrders.xaml
     /// </summary>
-    public partial class ViewTovar : Window
+    public partial class AddOrders : Window
     {
-        public ViewTovar()
+        public AddOrders()
         {
             InitializeComponent();
-        }
-
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.Owner != null)
-            {
-                this.Owner.Show();
-            }
-            this.Close();
         }
     }
 }
