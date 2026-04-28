@@ -48,10 +48,11 @@ namespace mvvm_test.Model
         {
             get
             {
-                if (Действующая_скидка > 15)
-                    return "#483D8B";
                 if (Кол_во_на_складе == 0)
                     return "Gray";
+                if (Действующая_скидка > 15)
+                    return "#483D8B";
+                
                 
                 return null;
             }
