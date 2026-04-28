@@ -1,4 +1,4 @@
-﻿using mvvm_test.ViewModel;
+﻿using mvvm_test.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,19 +16,15 @@ using System.Windows.Shapes;
 namespace mvvm_test.View
 {
     /// <summary>
-    /// Логика взаимодействия для ViewTovar.xaml
+    /// Логика взаимодействия для ViewGuest.xaml
     /// </summary>
-    public partial class ViewTovar : Window
+    public partial class ViewGuest : Window
     {
-        public ViewTovar(vmTovar vmTovar)
+        КалиевПрактикаEntities db = new КалиевПрактикаEntities();
+        public ViewGuest()
         {
-            DataContext = vmTovar;
             InitializeComponent();
-        }
-
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
+            TovarList.ItemsSource = db.Товары.ToList();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

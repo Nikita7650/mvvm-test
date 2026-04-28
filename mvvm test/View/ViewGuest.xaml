@@ -1,0 +1,87 @@
+﻿<Window x:Class="mvvm_test.View.ViewGuest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mvvm_test.View"
+        
+        mc:Ignorable="d"
+        Title="ViewGuest" Height="450" Width="800">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+            <Button Content="Выйти" Width="80" Height="30" Click="Button_Click"  Style="{StaticResource SecondaryButtonStyle}"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1">
+            <ItemsControl Name="TovarList">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border
+                            BorderBrush="Black"
+                            BorderThickness="1">
+                            <Grid Background="{Binding Color}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="4*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Grid.Column="0" MaxHeight="200" 
+        MaxWidth="300" Source="{Binding Photo}" />
+
+                                <StackPanel Grid.Column="1"
+            Orientation="Vertical">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Катогория.Категория_товара}"/>
+                                        <TextBlock Text=" | "/>
+                                        <TextBlock Text="{Binding Наименование_товара}"/>
+                                    </StackPanel>
+
+                                    <TextBlock Text="{Binding Описание_товара,
+        StringFormat={} Описание товара: {0}}"
+               TextWrapping="Wrap"/>
+
+                                    <TextBlock Text="{Binding Производитель.Производитель1,
+        StringFormat={} Производитель: {0}}"
+               TextWrapping="Wrap"/>
+
+                                    <TextBlock Text="{Binding Поставщик.Поставщик1,
+        StringFormat={} Поставщик: {0}}"
+               TextWrapping="Wrap"/>
+
+                                    <TextBlock Text="{Binding Цена,
+        StringFormat={} Цена: {0}}"
+               TextWrapping="Wrap"
+               TextDecorations="{Binding Decorations}"/>
+                                    <TextBlock Text="{Binding NewPrice}"
+               Foreground="{Binding PriceColorNew}"/>
+
+                                    <TextBlock Text="{Binding Единица_измерения,
+        StringFormat={} Еденица измерения: {0}}"
+               TextWrapping="Wrap"/>
+
+                                    <TextBlock Text="{Binding Кол_во_на_складе,
+        StringFormat={} Количество на складе: {0}}"
+               TextWrapping="Wrap"/>
+
+                                </StackPanel>
+
+                                <TextBlock Grid.Column="2"
+           Text="{Binding Действующая_скидка}"
+           HorizontalAlignment="Center"
+           VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</Window>

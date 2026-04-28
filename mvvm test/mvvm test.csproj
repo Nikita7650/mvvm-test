@@ -205,6 +205,9 @@
     <Compile Include="View\Autorization.xaml.cs">
       <DependentUpon>Autorization.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ViewGuest.xaml.cs">
+      <DependentUpon>ViewGuest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ViewOrders.xaml.cs">
       <DependentUpon>ViewOrders.xaml</DependentUpon>
     </Compile>
@@ -259,6 +262,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Autorization.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ViewGuest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

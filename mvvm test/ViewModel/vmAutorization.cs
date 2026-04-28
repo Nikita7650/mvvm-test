@@ -59,7 +59,7 @@ namespace mvvm_test.ViewModel
                 Autorization autorization = new Autorization();
                 autorization.Close();
 
-                ViewTovar viewTovar = new ViewTovar();
+                ViewTovar viewTovar = new ViewTovar(null);
                 viewTovar.Show();
 
             }
@@ -72,10 +72,10 @@ namespace mvvm_test.ViewModel
         {
             Autorization autorization = new Autorization();
             autorization.Close();
-            
 
-            ViewTovar viewTovar = new ViewTovar();
-            viewTovar.Show();
+
+            ViewGuest viewGuest = new ViewGuest();
+            viewGuest.Show();
         }
 
 

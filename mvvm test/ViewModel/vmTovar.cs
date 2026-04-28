@@ -1,11 +1,7 @@
 ﻿using mvvm_test.Model;
-using mvvm_test.View;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace mvvm_test.ViewModel
 {
@@ -20,20 +16,22 @@ namespace mvvm_test.ViewModel
             _listТовары ?? (_listТовары
             = new ObservableCollection<Товары>());
 
-        
+        private Пользователи _selectedUser;
 
-
-        public vmTovar()
+        public Пользователи SelectedUser
         {
+            get => _selectedUser ?? (_selectedUser = new Пользователи());
+            set => _selectedUser = value;
+        }
+        public vmTovar(Пользователи user)
+        {
+            SelectedUser = user;
             ListТовары.Clear();
 
             foreach (var item in db.Товары.ToList())
             {
                 ListТовары.Add(item);
             }
-
-            
-
         }
     }
 }

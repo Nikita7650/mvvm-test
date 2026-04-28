@@ -8,9 +8,9 @@
         mc:Ignorable="d"
         Title="ViewTovar" Height="450" Width="800">
 
-    <Window.DataContext>
+    <!--<Window.DataContext>
         <mvvm:vmTovar/>
-    </Window.DataContext>
+    </Window.DataContext>-->
     
     
     <Grid>
@@ -30,6 +30,7 @@
         <Image Grid.Row="0" Source="/View/icon.png" />
 
         <TextBlock  Grid.Row="0" Text="Окно товаров"  Style="{StaticResource PrimaryTextBlock}" Grid.Column="2"/>
+        <TextBlock Grid.Row="0" Grid.Column="3" Text="{Binding SelectedUser.ФИО}" Style="{StaticResource AccentTextBlock}"/>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
             <TextBlock Text="Поиск:"/>
