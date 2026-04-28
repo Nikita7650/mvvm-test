@@ -74,16 +74,6 @@ namespace mvvm_test.Model
             }
         }
 
-        public string PriceColorOld
-        {
-            get
-            {
-                if (Действующая_скидка >= 1)
-                    return "black";
-                else return null;
-            }
-        }
-
         public Nullable<decimal> NewPrice
         {
             get
