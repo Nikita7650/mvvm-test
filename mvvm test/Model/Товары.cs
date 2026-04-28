@@ -50,9 +50,13 @@ namespace mvvm_test.Model
             {
                 if (Действующая_скидка > 15)
                     return "#483D8B";
-                else return null;
+                if (Кол_во_на_складе == 0)
+                    return "Gray";
+                
+                return null;
             }
         }
+
 
         public string Decorations
         {

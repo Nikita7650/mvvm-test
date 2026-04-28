@@ -22,8 +22,8 @@ namespace mvvm_test.View
     {
         public ViewTovar(vmTovar vmTovar)
         {
-            DataContext = vmTovar;
             InitializeComponent();
+            DataContext = vmTovar;
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -38,6 +38,18 @@ namespace mvvm_test.View
                 this.Owner.Show();
             }
             this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            AddTovar addTovar = new AddTovar();
+            addTovar.Show();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            AddOrders addOrders = new AddOrders();
+            addOrders.Show();
         }
     }
 }

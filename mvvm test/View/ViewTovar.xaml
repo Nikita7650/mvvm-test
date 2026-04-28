@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:mvvm_test.View"
         xmlns:mvvm="clr-namespace:mvvm_test.ViewModel"
         mc:Ignorable="d"
-        Title="ViewTovar" Height="450" Width="800">
+        Title="ViewTovar" Height="450" Width="1000">
 
     <!--<Window.DataContext>
         <mvvm:vmTovar/>
@@ -30,33 +30,41 @@
         <Image Grid.Row="0" Source="/View/icon.png" />
 
         <TextBlock  Grid.Row="0" Text="Окно товаров"  Style="{StaticResource PrimaryTextBlock}" Grid.Column="2"/>
-        <TextBlock Grid.Row="0" Grid.Column="3" Text="{Binding SelectedUser.ФИО}" Style="{StaticResource AccentTextBlock}"/>
+        <TextBlock Grid.Row="0" Grid.Column="3" Text="{Binding SelectedUser.ФИО}"/>
+        <TextBlock  Grid.Row="0" Grid.Column="3" Text="{Binding SelectedUser.Роли.Роль_сотрудника}" Margin="0, 15, 0, 0"/>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <TextBlock Text="Поиск:"/>
-            <TextBox Text="123" />
+            <TextBlock Text="Поиск:" Visibility="{Binding Visibility2}"/>
+            <TextBox Text="123" Visibility="{Binding Visibility2}" />
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="2">
-            <TextBlock Text="Фильтрация:"/>
-            <ComboBox Style="{StaticResource CmBox}"/>
+            <TextBlock Text="Фильтрация:" Visibility="{Binding Visibility2}"/>
+            <ComboBox Style="{StaticResource CmBox}"
+                      Visibility="{Binding Visibility2}"
+                      />
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="3">
-            <TextBlock Text="Сортировка"/>
-            <ComboBox Style="{StaticResource CmBox}"/>
+            <TextBlock Text="Сортировка" Visibility="{Binding Visibility2}"/>
+            <ComboBox Style="{StaticResource CmBox}" Visibility="{Binding Visibility2}"
+                      />
         </StackPanel>
 
         <StackPanel Grid.Row="3" Grid.Column="2">
-            <Button Content="Добавить"  Style="{StaticResource AccentButtomStyle}"/>
+            <Button Content="Добавить заказ"  Style="{StaticResource AccentButtomStyle}" Visibility="{Binding VisibilityClient}" IsEnabled="{Binding IsEnabledClient}" Click="Button_Click_2"/>
         </StackPanel>
 
         <StackPanel Grid.Row="3" Grid.Column="3">
-            <Button Content="Удалить" Style="{StaticResource AccentButtomStyle}"/>
+            <Button Content="Удалить" Style="{StaticResource AccentButtomStyle}" Visibility="{Binding VisibilityClient}" IsEnabled="{Binding IsEnabledClient}" HorizontalAlignment="Left"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="3" Grid.Column="1">
-            <Button Content="Редактировать" Style="{StaticResource AccentButtomStyle}"/>
+        <StackPanel Grid.Row="3" Grid.Column="3">
+            <Button Content="Редактировать" Style="{StaticResource AccentButtomStyle}" Visibility="{Binding VisibilityClient}" IsEnabled="{Binding IsEnabledClient}" HorizontalAlignment="Center"/>
+        </StackPanel>
+
+            <StackPanel Grid.Row="3" Grid.Column="1">
+            <Button Content="Добавить товар" Style="{StaticResource AccentButtomStyle}" Visibility="{Binding VisibilityClient}" IsEnabled="{Binding IsEnabledClient}" Click="Button_Click_1"/>
         </StackPanel>
 
         <StackPanel Grid.Row="0" Grid.Column="1">

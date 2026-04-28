@@ -59,7 +59,7 @@ namespace mvvm_test.ViewModel
                 Autorization autorization = new Autorization();
                 autorization.Close();
 
-                ViewTovar viewTovar = new ViewTovar(null);
+                ViewTovar viewTovar = new ViewTovar(new vmTovar(user));
                 viewTovar.Show();
 
             }

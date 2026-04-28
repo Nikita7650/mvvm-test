@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Web;
+using System.Windows.Controls;
+using System.Windows.Documents;
 
 namespace mvvm_test.ViewModel
 {
@@ -33,5 +36,41 @@ namespace mvvm_test.ViewModel
                 ListТовары.Add(item);
             }
         }
+
+        public bool IsEnabledClient
+        {
+            get
+            {
+                if (SelectedUser.НомерРоли == 3)
+                {
+                    return false;
+                }    
+                else return true;
+            }
+        }
+
+        public string VisibilityClient
+        {
+            get
+            {
+                if (SelectedUser.НомерРоли == 3 || (SelectedUser.НомерРоли == 2))
+                    return "Hidden";
+                else return null;
+            }
+        }
+
+        public string Visibility2
+        {
+            get
+            {
+                if (SelectedUser.НомерРоли == 3)
+                    return "Hidden";
+                else return null;
+            }
+            
+        }
+
+
+
     }
 }
